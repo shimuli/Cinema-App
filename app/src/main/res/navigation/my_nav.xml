@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cedric.shimuli.mycinema.ui.home.HomeFragment"
+        android:label="Movie List"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.cedric.shimuli.mycinema.ui.home.FavouriteFragment"
+        android:label="My Favourite Movies"
+        tools:layout="@layout/fragment_favourite" />
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.cedric.shimuli.mycinema.ui.home.BookingFragment"
+        android:label="My Reservations"
+        tools:layout="@layout/fragment_booking" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.cedric.shimuli.mycinema.ui.home.ProfileFragment"
+        android:label="My Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

@@ -4,6 +4,6 @@ The app is still in development.
 
 ## Backend Info
 Backend was developed using ASP.NET Core and hosted on Azure
-APIs Link: [<img align="left" alt="https://moviessystem.azurewebsites.net/index.html" width="22px" src="https://moviessystem.azurewebsites.net/index.html" />][postman]
-Backend Code:  [<img align="left" alt="https://github.com/shimuli/Movies-API/tree/main/moviesApi" width="22px" src="https://github.com/shimuli/Movies-API/tree/main/moviesApi" />][github]
+APIs Link: [<img align="left" alt="Postman" width="22px" src="https://moviessystem.azurewebsites.net/index.html" />][website]
+Backend Code:  [<img align="left" alt="GitHub" width="22px" src="https://github.com/shimuli/Movies-API/tree/main/moviesApi" />][website]
  Contact me for special access

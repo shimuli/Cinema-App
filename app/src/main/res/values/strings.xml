@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CNema</string>
+    <string name="first_name">First Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_reservations">My Reservations</string>
+    <string name="my_profile">My Profile</string>
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="slow_or_no_internet_connection_check_your_connection">Slow or no internet connection, check your connection</string>
+    <string name="refresh">Refresh</string>
+    <string name="whoops">Whoops</string>
+    <string name="sort_descending_order">Sort Descending order</string>
+    <string name="sort_ascending_order">Sort Ascending order</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- favouriteRecipeFragment,foodJokeFragment-->
+    <item android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item android:id="@+id/favouriteFragment"
+
+        android:icon="@drawable/ic_like"
+        android:title="@string/favourite" />
+
+    <item android:id="@+id/bookingFragment"
+        android:icon="@drawable/ic_tickets"
+        android:title="@string/my_reservations" />
+
+    <item android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_profile_user"
+        android:title="@string/my_profile" />
+</menu>

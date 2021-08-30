@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color"
+    tools:context="ui.home.ProfileFragment">
+
+    <com.github.ivbaranov.mli.MaterialLetterIcon
+        android:id="@+id/mMaterialLetterIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/mMaterialLetterIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Phone"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/blue"
+        app:layout_constraintTop_toBottomOf="@id/userName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/profileLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone"
+        android:src="@drawable/ic_profile_user"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/phone"
+        app:layout_constraintStart_toEndOf="@+id/profileLogo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"/>
+
+    <View
+        android:id="@+id/accountView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/gray"/>
+
+
+
+    <ImageView
+        android:id="@+id/notificationLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/accountView"
+        android:src="@drawable/ic_notifications"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/accountView"
+        app:layout_constraintStart_toEndOf="@+id/notificationLogo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"/>
+
+    <View
+        android:id="@+id/notificationLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notification"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/gray"/>
+
+
+    <ImageView
+        android:id="@+id/settingsLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificationLine"
+        android:src="@drawable/ic_settings"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/notificationLine"
+        app:layout_constraintStart_toEndOf="@+id/notificationLogo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"/>
+
+    <View
+        android:id="@+id/settingsLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/gray"/>
+
+
+    <ImageView
+        android:id="@+id/helpLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingsLine"
+        android:src="@drawable/ic_help"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/settingsLine"
+        app:layout_constraintStart_toEndOf="@+id/notificationLogo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"/>
+
+    <View
+        android:id="@+id/helpLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/help"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/gray"/>
+
+
+    <ImageView
+        android:id="@+id/logoutLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helpLine"
+        android:src="@drawable/ic_logout"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/helpLine"
+        app:layout_constraintStart_toEndOf="@+id/notificationLogo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"/>
+
+    <View
+        android:id="@+id/logoutLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logout"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/gray"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
