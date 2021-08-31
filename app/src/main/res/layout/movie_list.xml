@@ -103,8 +103,27 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
-            android:text="1 hr 45 min"
+            android:text="Thur,Aug 31 2021"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:background="@drawable/text_background"
             app:layout_constraintStart_toEndOf="@+id/movieBanner"
+            app:layout_constraintTop_toBottomOf="@+id/movieLanguage" />
+
+        <TextView
+            android:id="@+id/airTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:text="22:00:33"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:background="@drawable/text_background"
+            app:layout_constraintStart_toEndOf="@+id/movieDuration"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/movieLanguage" />
 
 

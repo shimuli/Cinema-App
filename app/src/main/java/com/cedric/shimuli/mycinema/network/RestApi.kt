@@ -47,12 +47,21 @@ interface RestApi {
     @GET("Movies/AllMovies")  // https://localhost:44353/api/Movies/searchMovie?query=i
     fun fetchMovies(
         @Header("Authorization") authToken: String?,
+        @Query("pageNumber") pageNumber: Int,
+        @Query("pageSize") pageSize: Int,
+        @Query("sort") sort: String,
+
     ): Call<List<MoviesModel>>
 
     @GET("Movies/searchMovie")
     fun searchMovie(
         @Header("Authorization") authToken: String?,
         @Query("query") query: String
+    ): Call<List<MoviesModel>>
+
+    @GET("Movies/Todaymovies")
+    fun todayMovies(
+        @Header("Authorization") authToken: String?,
     ): Call<List<MoviesModel>>
 
 

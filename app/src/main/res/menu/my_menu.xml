@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/highestRated"
+        android:title="@string/highest_rated"
+        android:icon="@drawable/ic_sort_descending"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/lowestRated"
+        android:title="@string/lowest_rated"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/todayMovies"
+        android:title="@string/todays_movies"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/refresh"
+        android:title="@string/refresh"
+        android:icon="@drawable/ic_baseline_refresh_24"
+        app:showAsAction="ifRoom" />
+</menu>

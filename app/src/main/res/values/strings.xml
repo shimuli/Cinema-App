@@ -12,4 +12,7 @@
     <string name="whoops">Whoops</string>
     <string name="sort_descending_order">Sort Descending order</string>
     <string name="sort_ascending_order">Sort Ascending order</string>
+    <string name="todays_movies">Todays\' Movies</string>
+    <string name="lowest_rated">Lowest Rated</string>
+    <string name="highest_rated">Highest Rated</string>
 </resources>

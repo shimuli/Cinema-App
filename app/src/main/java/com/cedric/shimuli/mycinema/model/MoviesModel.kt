@@ -10,8 +10,11 @@ class MoviesModel: Serializable {
     @SerializedName("name")
     var name: String? = "name"
 
-    @SerializedName("duration")
-    var duration: String? = "duration"
+    @SerializedName("playDate")
+    var playDate: String? = "playDate"
+
+    @SerializedName("playTime")
+    var playTime: String? = "playTime"
 
     @SerializedName("language")
     var language: String? = "language"
@@ -34,3 +37,5 @@ class MoviesModel: Serializable {
 //"rating": 7.9,
 //"genre": "Actin, Adventure,dramma",
 //"imageurl": "https://localhost:44353\\acce744c-933c-4de9-950b-b6b934193495.jpg"
+//"playDate": "2021-08-31T00:00:00",
+//"playTime": "2021-08-18T15:45:00",
