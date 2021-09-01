@@ -61,18 +61,17 @@ class BookMovieActivity : AppCompatActivity() {
         })
         binding.totalCost.setOnClickListener(View.OnClickListener {
             val amount = bookMovie!!.ticketPrice?.toInt()
-            val total = amount?.times(counter)
+            val total = (amount?.times(counter))?.toDouble()
 
-            binding.totalCost.setText("Ksh."+ total.toString()+" @"+amount+" per ticket")
+            val totalCost = Utils.convertCurrency(total)
+            binding.totalCost.setText(totalCost.toString()+" @"+amount+" per ticket")
             Toast.makeText(this@BookMovieActivity, total.toString(), Toast.LENGTH_LONG).show()
         })
 
         binding.totalCostLabel.setOnClickListener(View.OnClickListener {
             val amount = bookMovie!!.ticketPrice?.toInt()
             val total = (amount?.times(counter))?.toDouble()
-
             val totalCost = Utils.convertCurrency(total)
-
             binding.totalCost.setText(totalCost.toString()+" @"+amount+" per ticket")
             Toast.makeText(this@BookMovieActivity, total.toString(), Toast.LENGTH_LONG).show()
         })
