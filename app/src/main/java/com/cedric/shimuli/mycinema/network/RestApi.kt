@@ -1,10 +1,7 @@
 package com.cedric.shimuli.kotlincrud.network
 
 import android.graphics.Bitmap
-import com.cedric.shimuli.mycinema.model.LoginResponse
-import com.cedric.shimuli.mycinema.model.MoviesModel
-import com.cedric.shimuli.mycinema.model.RegisterResponse
-import com.cedric.shimuli.mycinema.model.UserModel
+import com.cedric.shimuli.mycinema.model.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -28,6 +25,18 @@ interface RestApi {
         @Field("Phone") Phone: String,
         @Field("confirmCode") confirmCode: String,
     ): Call<RegisterResponse?>?
+
+
+    @FormUrlEncoded
+    @POST("Reservations/createReservation")
+    fun bookMovie(
+        @Header("Authorization") authToken: String?,
+        @Field("Quantity") Quantity: Int,
+        @Field("Phone") Phone: String,
+        @Field("MovieId") MovieId: Int,
+        @Field("UserId") UserId: Int,
+    ): Call<BookingResponse?>?
+
 
     @FormUrlEncoded
     @POST("Users/Login")

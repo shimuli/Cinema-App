@@ -72,7 +72,7 @@ object RestCall {
 
     val client: RestApi by lazy {
         val retrofit = Retrofit.Builder()
-            .baseUrl(Constants.DEV_URL)
+            .baseUrl(Constants.PRODUCTION_URL)
             .client(getUnsafeOkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

@@ -40,6 +40,7 @@ class ProfileFragment : Fragment() {
                     Paper.book().write("token", empty)
                     Paper.book().write("userPhone", empty)
                     Paper.book().write("userName", empty)
+                    Paper.book().write("userId", empty)
                     val intent = Intent(activity, LoginActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)

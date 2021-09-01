@@ -27,7 +27,7 @@ object Utils {
         //val productPrice: Double = pro_price.toDouble()
         val priceFormat = NumberFormat.getCurrencyInstance()
         val priceFormatSymbols = (priceFormat as DecimalFormat).decimalFormatSymbols
-        priceFormatSymbols.currencySymbol = "Ksh. "
+        priceFormatSymbols.currencySymbol = "Ksh."
         priceFormat.decimalFormatSymbols = priceFormatSymbols
         return priceFormat.format(productPrice).trim { it <= ' ' }
     }
