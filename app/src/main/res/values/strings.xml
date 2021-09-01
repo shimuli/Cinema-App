@@ -15,4 +15,6 @@
     <string name="todays_movies">Todays\' Movies</string>
     <string name="lowest_rated">Lowest Rated</string>
     <string name="highest_rated">Highest Rated</string>
+    <string name="details">Details</string>
+    <string name="long_desc_text">The default OnClickListener opens the menu when the menu icon is clicked. You can change this behaviour, for example to open a menu with a different UX, like a bottom sheet panel. Obviously if you want a UX different from the one provided by the library, you are responsible for creating your own components</string>
 </resources>

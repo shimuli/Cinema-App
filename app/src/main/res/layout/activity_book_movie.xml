@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.home.BookMovieActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/movieCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="3dp"
+
+        android:elevation="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_11"
+            android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/movieBanner"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/transformers"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="fitStart"/>
+
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="0dp"
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Movie Name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/movieGenre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="Genre"
+                android:textColor="@color/color_11"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieName" />
+
+            <RatingBar
+                android:id="@+id/ratingBar1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:numStars="5"
+                android:rating="3.5"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
+
+            <TextView
+                android:id="@+id/movieRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:text="4.5"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar1"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
+
+
+            <TextView
+                android:id="@+id/movieLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="English"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieRating" />
+
+            <TextView
+                android:id="@+id/movieDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="2 hrs 5 min"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@color/white"
+                android:background="@drawable/text_background"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieLanguage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NUmber of movie tickets"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/movieCard"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="50dp"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:layout_marginTop="20dp"/>
+
+    <ImageButton
+        android:layout_marginTop="20dp"
+        android:id="@+id/minusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tickets"
+        app:layout_constraintStart_toStartOf="@id/tickets"
+        android:padding="10dp"
+       android:background="@drawable/counter_btn_bg"
+        android:src="@drawable/ic_baseline_remove_24"/>
+
+    <TextView
+        android:id="@+id/ticketCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tickets"
+        app:layout_constraintStart_toEndOf="@id/minusBtn"
+        app:layout_constraintEnd_toStartOf="@id/addBtn"
+        android:text="1"/>
+
+
+    <ImageButton
+        android:id="@+id/addBtn"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tickets"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/counter_btn_bg"
+        android:src="@drawable/ic_baseline_add_24"/>
+
+    <TextView
+        android:id="@+id/totalCostLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click here to view total cost"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/minusBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="50dp"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:layout_marginTop="20dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/totalCostLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/totalCostLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/black"
+        android:focusable="false"
+        android:clickable="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/totalCost"
+            android:layout_width="match_parent"
+            android:focusable="false"
+            android:clickable="true"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/phone_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mpesa phone number"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/totalCostLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="50dp"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:layout_marginTop="20dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/phone_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/black"
+        android:hint="confirm payment number"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bookBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:background="@drawable/button_bg"
+        android:layout_marginTop="10dp"
+        android:text="Pay"
+        app:layout_constraintTop_toBottomOf="@id/phone_layout"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="50dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

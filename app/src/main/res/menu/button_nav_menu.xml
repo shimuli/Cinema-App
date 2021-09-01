@@ -6,10 +6,9 @@
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
 
-    <item android:id="@+id/favouriteFragment"
-
-        android:icon="@drawable/ic_like"
-        android:title="@string/favourite" />
+<!--    <item android:id="@+id/favouriteFragment"-->
+<!--        android:icon="@drawable/ic_like"-->
+<!--        android:title="@string/favourite" />-->
 
     <item android:id="@+id/bookingFragment"
         android:icon="@drawable/ic_tickets"

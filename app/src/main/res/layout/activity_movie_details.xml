@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.home.MovieDetailsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/playVideo"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/ic_play_video"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="center"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/trailerView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:autoPlay="false"
+        android:visibility="gone"
+        app:showFullScreenButton="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:showYouTubeButton="false"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="3dp"
+        android:background="@color/gray_btn_bg_color"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/playVideo">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/movieBanner"
+                android:layout_width="100dp"
+                android:layout_height="130dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/transformers"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="fitStart"/>
+
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Movie Name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/movieGenre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="Genre"
+                android:textColor="@color/color_11"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieName" />
+
+            <RatingBar
+                android:id="@+id/ratingBar1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:numStars="5"
+                android:rating="3.5"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
+
+            <TextView
+                android:id="@+id/movieRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="4.5"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar1"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
+
+
+            <TextView
+                android:id="@+id/movieLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="English"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieRating" />
+
+            <TextView
+                android:id="@+id/movieDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="2 hrs 4 min"
+                android:textSize="18sp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@color/white"
+                android:background="@drawable/text_background"
+                app:layout_constraintStart_toEndOf="@+id/movieBanner"
+                app:layout_constraintTop_toBottomOf="@+id/movieLanguage" />
+
+            <TextView
+                android:id="@+id/detailsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/movieDuration"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:text="@string/details"/>
+
+            <TextView
+                android:id="@+id/playDateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/detailsTitle"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Playing Date"/>
+
+            <TextView
+                android:id="@+id/playDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/playDateTitle"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color_11"
+                android:textSize="16sp"
+                android:text="Tue, 12 Sept 2021"/>
+
+
+            <TextView
+                android:id="@+id/playTimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/detailsTitle"
+                app:layout_constraintEnd_toEndOf="@id/movieGenre"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Playing Time"/>
+
+            <TextView
+                android:id="@+id/playTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/playDateTitle"
+                app:layout_constraintEnd_toEndOf="@id/movieGenre"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color_11"
+                android:textSize="16sp"
+                android:text="20:35 pm"/>
+
+
+            <TextView
+                android:id="@+id/ticketPriceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/playDate"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Ticket Price"/>
+
+            <TextView
+                android:id="@+id/ticketPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ticketPriceTitle"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color_11"
+                android:textSize="16sp"
+                android:text="Ksh. 2,000"/>
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/ticketPrice"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"/>
+
+            <TextView
+                android:id="@+id/descriptionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Description"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/descriptionTitle"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color_11"
+                android:minLines="3"
+                android:textSize="16sp"
+                android:text="@string/long_desc_text"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bookBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:paddingStart="50dp"
+                android:paddingEnd="50dp"
+                android:background="@drawable/button_bg"
+                android:layout_marginTop="10dp"
+                android:text="Book Ticket"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                app:layout_constraintStart_toStartOf="@id/movieBanner"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

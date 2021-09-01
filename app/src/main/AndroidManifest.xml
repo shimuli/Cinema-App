@@ -19,6 +19,15 @@
         android:theme="@style/Theme.MyCinema"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.home.BookMovieActivity"
+            android:exported="true"
+            android:label="Book a movie"
+            android:theme="@style/AppTheme.ActionBar.Transparent.BookMovie"/>
+        <activity
+            android:name=".ui.home.MovieDetailsActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity
             android:name=".ui.home.DashboardActivity"
             android:exported="true" />
         <activity
@@ -32,9 +41,7 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/CustomNoActionBarTheme"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.auth.RegisterActivity"
             android:exported="true"

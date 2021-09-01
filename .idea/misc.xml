@@ -4,13 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/MyCinema/app/src/main/res/drawable/button_bg.xml" value="0.19814814814814816" />
+        <entry key="..\:/Android/MyCinema/app/src/main/res/drawable/counter_btn_bg.xml" value="0.20260416666666667" />
+        <entry key="..\:/Android/MyCinema/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.20260416666666667" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/drawable/ic_notifications.xml" value="0.19814814814814816" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/drawable/image_bg.xml" value="0.20260416666666667" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/drawable/text_background.xml" value="0.19814814814814816" />
+        <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_book_movie.xml" value="0.22" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_dashboard.xml" value="0.18645833333333334" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_loginactivity.xml" value="0.18645833333333334" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
+        <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_movie_details.xml" value="0.18" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/layout/activity_verify_account.xml" value="0.18645833333333334" />
         <entry key="..\:/Android/MyCinema/app/src/main/res/layout/fragment_booking.xml" value="0.18645833333333334" />

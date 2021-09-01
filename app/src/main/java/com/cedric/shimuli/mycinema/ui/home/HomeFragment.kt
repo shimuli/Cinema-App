@@ -28,9 +28,9 @@ class HomeFragment : Fragment() {
     var pageNumber:Int = 1
     var pageSize:Int= 5
     private var isScrolling = false
-    private var currentScientists = 0
-    private var totalScientists = 0
-    private var scrolledOutScientists = 0
+    private var currentMovieList = 0
+    private var totalMovies = 0
+    private var scrolledOutMovies = 0
     var newpage:Int = 1
 
     private val a: HomeFragment =this
@@ -122,25 +122,29 @@ class HomeFragment : Fragment() {
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                currentScientists = layoutManager!!.childCount
-                totalScientists = layoutManager!!.itemCount
-                scrolledOutScientists = (recyclerView.layoutManager as LinearLayoutManager?)!!.findFirstVisibleItemPosition()
+                currentMovieList = layoutManager!!.childCount
+                totalMovies = layoutManager!!.itemCount
+                scrolledOutMovies = (recyclerView.layoutManager as LinearLayoutManager?)!!.findFirstVisibleItemPosition()
 
-                if (isScrolling && (totalScientists > currentScientists)) {
+                if (isScrolling && (totalMovies > currentMovieList)) {
                     isScrolling=false
                     if(dy>0){
                         newpage += 1
                         getMovies(newpage ,pageSize, "desc")
-                       // Toast.makeText(activity, "total= $totalScientists and  current= $currentScientists and newpage = $newpage and scrolledOutScientists = $scrolledOutScientists", Toast.LENGTH_LONG).show()
+                        // "total= $totalMovies and  current= $currentMovieList and newpage = $newpage and scrolledOutMovies = $scrolledOutMovies",
+                        // Toast.LENGTH_LONG)
+                        // .show()
                     }
                     else if (dy < 0) {
                         //newpage -= 1
                         //getMovies(newpage ,pageSize, "desc")
-                       // Toast.makeText(activity, "totalScientists= $totalScientists and  currentScientists= $currentScientists and newpage = $newpage and scrolledOutScientists = $scrolledOutScientists", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(activity,
+                    // "total= $totalMovies and  current= $currentMovieList and newpage = $newpage and scrolledOutMovies = $scrolledOutMovies",
+                    // Toast.LENGTH_LONG)
+                    // .show()
                     }
-
                 }
-                if (isScrolling && currentScientists+scrolledOutScientists== totalScientists){
+                if (isScrolling && currentMovieList+scrolledOutMovies== totalMovies){
                     isScrolling=false
 
                 }
@@ -178,6 +182,7 @@ class HomeFragment : Fragment() {
                 if(response.code()==200){
                     binding!!.pb.isIndeterminate = false
                     binding!!.pb.visibility= View.INVISIBLE
+                    binding!!.recyclerview.visibility = View.VISIBLE
                     val allMovies = response.body()
                     allMovies?.let { movieList.addAll(it) }
                     movieAdapter!!.notifyDataSetChanged()
@@ -216,16 +221,23 @@ class HomeFragment : Fragment() {
                     binding!!.pb.visibility= View.INVISIBLE
                     val allMovies = response.body()
                     if(allMovies!!.isEmpty()){
-                        Toast.makeText(activity, "No movie found", Toast.LENGTH_LONG).show()
+                        binding!!.noDataImage.setImageResource(R.drawable.ic_search_magnifier_with_a_cross)
+                        binding!!.noDataTitle.setText("No Results Found!")
+                        binding!!.noDataText.setText("No movie matches that name")
+                        binding!!.noConnection.visibility = View.VISIBLE
+
                     }
                     else{
-                        allMovies?.let { movieList.addAll(it) }
+                        binding!!.recyclerview.visibility = View.VISIBLE
+                        allMovies.let { movieList.addAll(it) }
                         movieAdapter!!.notifyDataSetChanged()
+
                     }
                 }
                 else{
                     binding!!.pb.isIndeterminate = false
                     binding!!.pb.visibility= View.INVISIBLE
+                    //img.setImageResource(R.drawable.my_image);
                     Toast.makeText(activity, "Something went wrong", Toast.LENGTH_LONG).show()
                 }
             }
@@ -241,6 +253,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun todayMovies() {
+
         binding!!.noConnection.visibility = View.INVISIBLE
         binding!!.pb.isIndeterminate = true
         binding!!.pb.visibility= View.VISIBLE
@@ -254,8 +267,19 @@ class HomeFragment : Fragment() {
                     binding!!.pb.isIndeterminate = false
                     binding!!.pb.visibility= View.INVISIBLE
                     val allMovies = response.body()
-                    allMovies?.let { movieList.addAll(it) }
-                    movieAdapter!!.notifyDataSetChanged()
+                    if(allMovies!!.isEmpty()){
+                        binding!!.recyclerview.visibility = View.INVISIBLE
+                        binding!!.noDataImage.setImageResource(R.drawable.ic_search_magnifier_with_a_cross)
+                        binding!!.noDataTitle.setText("No Movies Found!")
+                        binding!!.noDataText.setText("No movies will be aired today!")
+                        binding!!.noConnection.visibility = View.VISIBLE
+
+                    }
+                    else{
+                        allMovies.let { movieList.addAll(it) }
+                        movieAdapter!!.notifyDataSetChanged()
+                        binding!!.recyclerview.visibility = View.VISIBLE
+                    }
                 }
                 else{
                     binding!!.pb.isIndeterminate = false
@@ -288,7 +312,6 @@ class HomeFragment : Fragment() {
                 }
                 else{
                     getMovies(newpage ,pageSize, desc)
-
                 }
                 true
             }

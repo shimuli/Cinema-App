@@ -28,14 +28,16 @@ class MoviesModel: Serializable {
     @SerializedName("imageurl")
     var imageurl: String? = "imageurl"
 
-}
+    @SerializedName("description")
+    var description: String? = "description"
 
-//"id": 1007,
-//"name": "Jumanji",
-//"duration": "1 hrs 59 min",
-//"language": "Unniversal",
-//"rating": 7.9,
-//"genre": "Actin, Adventure,dramma",
-//"imageurl": "https://localhost:44353\\acce744c-933c-4de9-950b-b6b934193495.jpg"
-//"playDate": "2021-08-31T00:00:00",
-//"playTime": "2021-08-18T15:45:00",
+    @SerializedName("ticketPrice")
+    var ticketPrice: Double? = null
+
+    @SerializedName("trailer")
+    var trailer: String? = "trailer"
+
+    @SerializedName("duration")
+    var duration: String? = "duration"
+
+}

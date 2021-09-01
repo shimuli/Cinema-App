@@ -1,24 +1,19 @@
 package com.cedric.shimuli.mycinema.adapter
 
 import android.content.Context
-import android.icu.number.NumberFormatter.with
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions.with
-import com.bumptech.glide.request.RequestOptions
 import com.cedric.shimuli.mycinema.R
 import com.cedric.shimuli.mycinema.model.MoviesModel
+import com.cedric.shimuli.mycinema.ui.home.MovieDetailsActivity
+import com.cedric.shimuli.mycinema.utils.Utils
 import com.squareup.picasso.Picasso
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 class MoviesAdapter(private val context: Context, movies: List<MoviesModel>) :  RecyclerView.Adapter<MoviesAdapter.ViewHolder>()  {
   private val movies:List<MoviesModel>
@@ -67,11 +62,11 @@ class MoviesAdapter(private val context: Context, movies: List<MoviesModel>) :  
 
     override fun onBindViewHolder(holder: MoviesAdapter.ViewHolder, position: Int) {
         val movieList: MoviesModel = movies[position]
-        holder.nameText.setText(movieList.name)
-        holder.ratingText.setText(movieList.rating+ "/10")
+        holder.nameText.text = movieList.name
+        holder.ratingText.text = movieList.rating+ "/10"
        // holder.durationText.setText(movieList.playDate.toString().replace("T00:00:00", "")) // 2021-08-31T00:00:00  HH:mm
-        holder.languageText.setText(movieList.language)
-        holder.genreText.setText(movieList.genre)
+        holder.languageText.text = movieList.language
+        holder.genreText.text = movieList.genre
 
         val date = movieList.playDate.toString().replace("T00:00:00", "")
 
@@ -79,15 +74,15 @@ class MoviesAdapter(private val context: Context, movies: List<MoviesModel>) :  
 
         val localDateTime: LocalDateTime = LocalDateTime.parse(movieList.playDate.toString())
         //DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
-        var formatter = DateTimeFormatter.ofPattern("E, MMM dd yyyy")
+        val formatter = DateTimeFormatter.ofPattern("E, MMM dd yyyy")
         val airDate = formatter.format(localDateTime)
-        holder.durationText.setText(airDate)
+        holder.durationText.text = airDate
 
         val localTime: LocalDateTime = LocalDateTime.parse(movieList.playTime.toString())
         //DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
-        var timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
+        val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
         val airTime = timeFormatter.format(localTime)
-        holder.timeText.setText(airTime)
+        holder.timeText.text = airTime
 
         val url = movieList.imageurl
 
@@ -99,11 +94,8 @@ class MoviesAdapter(private val context: Context, movies: List<MoviesModel>) :  
 
         holder.setItemClickListener(object : ItemClickListener {
             override fun onItemClick(pos: Int) {
-//                Utils.sendScientistToActivity(
-//                    context, scientist,
-//                    DetailActivity::class.java
-//                )
-                Toast.makeText(context, movieList.name, Toast.LENGTH_LONG).show()
+                Utils.sendDataActivity(context, movieList, MovieDetailsActivity::class.java)
+
             }
         })
     }
