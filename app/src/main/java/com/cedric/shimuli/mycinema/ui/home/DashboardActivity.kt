@@ -9,6 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.cedric.shimuli.mycinema.R
 import com.cedric.shimuli.mycinema.databinding.ActivityDashboardBinding
+import io.paperdb.Paper
 
 class DashboardActivity : AppCompatActivity() {
     private  lateinit var binding: ActivityDashboardBinding
@@ -18,6 +19,7 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Paper.init(this)
 
         // fragment navigation
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment

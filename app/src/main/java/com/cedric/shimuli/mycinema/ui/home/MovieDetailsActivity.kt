@@ -13,6 +13,7 @@ import com.cedric.shimuli.mycinema.utils.Utils
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.squareup.picasso.Picasso
+import io.paperdb.Paper
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -24,6 +25,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMovieDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Paper.init(this)
         displayMovies()
         lifecycle.addObserver(binding.trailerView);
 

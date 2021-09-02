@@ -1,4 +1,4 @@
-package com.cedric.shimuli.mycinema
+package com.cedric.shimuli.mycinema.ui
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -12,9 +12,6 @@ import com.cedric.shimuli.mycinema.utils.Constants
 import io.paperdb.Paper
 import com.google.firebase.analytics.FirebaseAnalytics
 
-
-
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
     var preferences: SharedPreferences? = null
@@ -23,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        preferences = getSharedPreferences(Constants.REF_VALUE, MODE_PRIVATE)
         Paper.init(this)
+        preferences = getSharedPreferences(Constants.REF_VALUE, MODE_PRIVATE)
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     }
 

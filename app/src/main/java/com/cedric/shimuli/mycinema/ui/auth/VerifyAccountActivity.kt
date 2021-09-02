@@ -11,6 +11,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import com.cedric.shimuli.mycinema.databinding.ActivityVerifyAccountBinding
 import com.cedric.shimuli.mycinema.model.RegisterResponse
 import com.cedric.shimuli.mycinema.network.RestCall
+import io.paperdb.Paper
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,6 +22,7 @@ class VerifyAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityVerifyAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Paper.init(this)
 
 //        val userId = Paper.book().read<String>("userId")
 //        val code = Paper.book().read<String>("code")
@@ -34,6 +36,11 @@ class VerifyAccountActivity : AppCompatActivity() {
         binding.info.setText("Enter the code sent to $phone to verify your account")
         binding.verifyBtn.setOnClickListener(View.OnClickListener {
             verifyInput(userId, phone)
+        })
+        binding.back.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@VerifyAccountActivity, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         })
     }
 
@@ -108,7 +115,6 @@ class VerifyAccountActivity : AppCompatActivity() {
                                 .setConfirmText("Ok")
                                 .setConfirmClickListener { sDialog -> sDialog.dismissWithAnimation() }
                                 .show()
-                            TODO("Not yet implemented")
                         }
 
                     }

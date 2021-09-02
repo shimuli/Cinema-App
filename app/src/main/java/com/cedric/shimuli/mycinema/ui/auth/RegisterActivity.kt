@@ -76,14 +76,17 @@ class RegisterActivity : AppCompatActivity() {
             binding.phone.text.isNullOrEmpty() -> {
                 binding.phone.error = "Phone Number  is Required Please!"
             }
+            binding.phone.text!!.length<10 -> {
+                binding.phone.error = "Invalid phone number!"
+            }
 
             binding.password.text.isNullOrEmpty() -> {
                 binding.password.error = "Password is too short!"
             }
 
-//            !binding.password.toString().equals(binding.confirmPassword.toString())-> {
-//                Toast.makeText(this, "Passwords don't match", Toast.LENGTH_LONG).show()
-//            }
+            !binding.password.text.toString().equals(binding.confirmPassword.text.toString())-> {
+                Toast.makeText(this, "Passwords don't match", Toast.LENGTH_LONG).show()
+            }
             else->{
 
                 val firstname:String = binding.firstName.text.toString()
@@ -128,7 +131,7 @@ class RegisterActivity : AppCompatActivity() {
 //                        Paper.book().write("code", code)
 //                        Paper.book().write("phone", phone)
 
-                        val intent = Intent(this@RegisterActivity, VerifyAccountActivity::class.java)
+                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                         intent.putExtra("userId",userId)
                         intent.putExtra("code",code)
                         intent.putExtra("phone",phone)

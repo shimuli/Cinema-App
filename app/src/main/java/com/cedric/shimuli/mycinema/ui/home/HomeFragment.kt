@@ -38,6 +38,7 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+        Paper.init(activity)
     }
 
     override fun onCreateView(
@@ -180,12 +181,16 @@ class HomeFragment : Fragment() {
                 call: Call<List<MoviesModel>>,
                 response: Response<List<MoviesModel>>) {
                 if(response.code()==200){
-                    binding!!.pb.isIndeterminate = false
-                    binding!!.pb.visibility= View.INVISIBLE
-                    binding!!.recyclerview.visibility = View.VISIBLE
-                    val allMovies = response.body()
-                    allMovies?.let { movieList.addAll(it) }
-                    movieAdapter!!.notifyDataSetChanged()
+                    if (response.body()?.isNotEmpty() == true){
+                        binding!!.pb.isIndeterminate = false
+                        binding!!.pb.visibility= View.INVISIBLE
+                        binding!!.recyclerview.visibility = View.VISIBLE
+                        val allMovies = response.body()
+                        allMovies?.let { movieList.addAll(it) }
+                        movieAdapter!!.notifyDataSetChanged()
+                    }
+
+
                 }
                 else{
                     binding!!.pb.isIndeterminate = false

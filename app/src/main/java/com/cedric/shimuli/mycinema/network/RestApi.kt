@@ -60,7 +60,6 @@ interface RestApi {
         @Query("pageNumber") pageNumber: Int,
         @Query("pageSize") pageSize: Int,
         @Query("sort") sort: String,
-
     ): Call<List<MoviesModel>>
 
     @GET("Movies/searchMovie")
@@ -73,6 +72,13 @@ interface RestApi {
     fun todayMovies(
         @Header("Authorization") authToken: String?,
     ): Call<List<MoviesModel>>
+
+    @GET("Reservations/getUserReservations")
+    fun fetchBookings(
+        @Header("Authorization") authToken: String?,
+        @Query("id") userId: String,
+        @Query("watched") watched: Boolean,
+    ): Call<List<UserBookedMovies>>
 
 
 //    @POST("fetchcategory_products")

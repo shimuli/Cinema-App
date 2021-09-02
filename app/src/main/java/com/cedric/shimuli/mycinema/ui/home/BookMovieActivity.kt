@@ -34,6 +34,7 @@ class BookMovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBookMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Paper.init(this)
         displayMovies()
 
         val actionBar = supportActionBar
@@ -139,13 +140,13 @@ class BookMovieActivity : AppCompatActivity() {
                 }
                 else{
                     pDialog.dismiss()
-                    Toast.makeText(this@BookMovieActivity, "Faailed ", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@BookMovieActivity, "Failed, try again ", Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<BookingResponse?>, t: Throwable) {
                 pDialog.dismiss()
-                Toast.makeText(this@BookMovieActivity, "Wacha mchezo ", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@BookMovieActivity, "Something went wrong, try again ", Toast.LENGTH_LONG).show()
             }
         })
     }

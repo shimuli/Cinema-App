@@ -37,6 +37,7 @@
         android:text="Enter the code sent to your Enter the code sent to your Enter the code sent to your"
         android:textSize="16sp"
         android:maxLines="2"
+        android:textColor="@color/color_11"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/label"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,5 +79,19 @@
         android:layout_marginEnd="30dp"
         android:background="@color/blue"
         android:text="Verify"/>
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify later"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:background="@color/color_11"
+        app:layout_constraintTop_toBottomOf="@id/verifyBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,10 +22,15 @@ import java.util.*
 class ProfileFragment : Fragment() {
     private  var binding: FragmentProfileBinding? = null
     private val _binding get() = binding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Paper.init(activity)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         binding!!.logout.setOnClickListener(View.OnClickListener {
@@ -48,6 +53,22 @@ class ProfileFragment : Fragment() {
                 }
                 .setCancelClickListener { sDialog -> sDialog.cancel() }
                 .show()
+        })
+
+        binding!!.account.setOnClickListener(View.OnClickListener {
+            Toast.makeText(activity, "Am working on this", Toast.LENGTH_LONG).show()
+        })
+
+        binding!!.notification.setOnClickListener(View.OnClickListener {
+            Toast.makeText(activity, "Am working on this", Toast.LENGTH_LONG).show()
+        })
+
+        binding!!.settings.setOnClickListener(View.OnClickListener {
+            Toast.makeText(activity, "Am working on this", Toast.LENGTH_LONG).show()
+        })
+
+        binding!!.help.setOnClickListener(View.OnClickListener {
+            Toast.makeText(activity, "Am working on this", Toast.LENGTH_LONG).show()
         })
 
         //getProfile()

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.cedric.shimuli.mycinema.ui.home.HomeFragment"
-        android:label="Movie List"
+        android:label="In Theatre"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/favouriteFragment"
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/bookingFragment"
         android:name="com.cedric.shimuli.mycinema.ui.home.BookingFragment"
-        android:label="My Reservations"
+        android:label="My Tickets"
         tools:layout="@layout/fragment_booking" />
     <fragment
         android:id="@+id/profileFragment"
