@@ -10,16 +10,22 @@ import com.cedric.shimuli.mycinema.ui.auth.LoginActivity
 import com.cedric.shimuli.mycinema.ui.home.DashboardActivity
 import com.cedric.shimuli.mycinema.utils.Constants
 import io.paperdb.Paper
+import com.google.firebase.analytics.FirebaseAnalytics
+
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
     var preferences: SharedPreferences? = null
+    private var mFirebaseAnalytics: FirebaseAnalytics? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         preferences = getSharedPreferences(Constants.REF_VALUE, MODE_PRIVATE)
         Paper.init(this)
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     }
 
     override fun onResume() {

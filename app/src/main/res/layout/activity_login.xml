@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:inputType="phone"
                 android:maxLength="10"
-                android:text="0716591187"
+                android:text="0700000000"
                 android:textColor="@color/black"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +88,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:inputType="textPassword"
-                android:text="cedric@2021"
+                android:text="cedric"
                 android:textColor="@color/black"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>

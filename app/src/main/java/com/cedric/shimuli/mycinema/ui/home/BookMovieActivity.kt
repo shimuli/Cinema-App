@@ -22,6 +22,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.Header
+import java.text.SimpleDateFormat
+import java.util.*
 
 class BookMovieActivity : AppCompatActivity() {
     private lateinit var binding:ActivityBookMovieBinding
@@ -105,6 +107,9 @@ class BookMovieActivity : AppCompatActivity() {
     }
 
     private fun bookTicket() {
+        val sdf = SimpleDateFormat("dd-MM-yyyy")
+        val currentDate = sdf.format(Date())
+
         val pDialog = SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE)
         pDialog.progressHelper.barColor = Color.parseColor("#A5DC86")
         pDialog.titleText = "Booking..."
@@ -114,7 +119,7 @@ class BookMovieActivity : AppCompatActivity() {
         val token = Paper.book().read<String>("token")
         val userId = Paper.book().read<String>("userId").toInt()
         val movieId = bookMovie!!.id
-        val booking = movieId?.let { RestCall.client.bookMovie(token, counter,phone, it, userId) }
+        val booking = movieId?.let { RestCall.client.bookMovie(token, counter,phone, it, userId,currentDate) }
         booking?.enqueue(object :Callback<BookingResponse?>{
             override fun onResponse(
                 call: Call<BookingResponse?>,

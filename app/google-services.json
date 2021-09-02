@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "751053442543",
+    "project_id": "cnema-app-1b80c",
+    "storage_bucket": "cnema-app-1b80c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751053442543:android:ca97b3b6f04d979d01ba1a",
+        "android_client_info": {
+          "package_name": "com.cedric.shimuli.mycinema"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751053442543-9lp3hbvh3adf0gvel6iajcjq76uc60m7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhjlKpRevX-ed0EWcUMLx6_t5SUYHALzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751053442543-9lp3hbvh3adf0gvel6iajcjq76uc60m7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

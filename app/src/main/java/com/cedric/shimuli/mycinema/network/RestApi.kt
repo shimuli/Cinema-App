@@ -35,6 +35,7 @@ interface RestApi {
         @Field("Phone") Phone: String,
         @Field("MovieId") MovieId: Int,
         @Field("UserId") UserId: Int,
+        @Field("ReservationTime") ReservationTime: String,
     ): Call<BookingResponse?>?
 
 
