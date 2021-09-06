@@ -5,7 +5,7 @@ The app is still in development.
 ## Backend Info
 Backend was developed using ASP.NET Core and hosted on Azure
 To Test the API: [API Link](https://moviessystem.azurewebsites.net/index.html)
-Backend Code : [GItHub Link](https://github.com/shimuli/Movies-API/tree/main/moviesApi)
+Backend Code : [GItHub Link](https://github.com/shimuli/Movies-API)
 
 Contact me for special access
 ## Screen shoots
